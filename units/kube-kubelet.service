@@ -6,6 +6,7 @@ After=setup-network-environment.service
 
 [Service]
 EnvironmentFile=/etc/network-environment
+WorkingDirectory=/root
 ExecStartPre=/usr/bin/wget -N -P /opt/bin http://storage.googleapis.com/kubernetes/kubelet
 ExecStartPre=/usr/bin/chmod +x /opt/bin/kubelet
 ExecStart=/opt/bin/kubelet \
